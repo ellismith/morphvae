@@ -143,3 +143,16 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# data files
+*.tif
+*_frac*
+*.pkl
+*.swc
+*.csv
+
+# random walk numpy files
+*.npy
+
+*.mat
+*.zip
+
