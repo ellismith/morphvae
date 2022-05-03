@@ -101,11 +101,14 @@ def load_neurons(path, sort=True):
             files = np.array(files)[file_idx]
    
         for f in files:
-            swc = pd.read_csv(path+f, delim_whitespace=True, comment='#',
-                      names=['n', 'type', 'x', 'y', 'z', 'radius', 'parent'], index_col=False)
-            
-            N = nt.NeuronTree(swc=swc)
-            neurons.append(N)
+            try:
+                swc = pd.read_csv(path+f, delim_whitespace=True, comment='#',
+                        names=['n', 'type', 'x', 'y', 'z', 'radius', 'parent'], index_col=False)
+            except:
+                print(f)
+            else:
+                N = nt.NeuronTree(swc=swc)
+                neurons.append(N)
     return neurons
 
 

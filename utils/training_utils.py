@@ -3,7 +3,7 @@ import numpy as np
 import sys
 sys.path.append("..")
 from models import Seq2SeqDataSet, SeqEncoder, SeqDecoder, Seq2Seq_VAE
-from .vmf_batch import vMF
+from utils.vmf_batch import vMF
 
 SEED = 17
 
