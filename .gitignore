@@ -155,5 +155,6 @@ dmypy.json
 
 *.mat
 *.zip
+*.pt
 
 
