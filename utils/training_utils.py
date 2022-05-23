@@ -4,6 +4,7 @@ import sys
 sys.path.append("..")
 from models import Seq2SeqDataSet, SeqEncoder, SeqDecoder, Seq2Seq_VAE
 from utils.vmf_batch import vMF
+import GPUtil
 
 SEED = 17
 
@@ -64,7 +65,7 @@ def train(model,classifier, iterator, optimizer, model_criterion,
         src_len = seq_len.view(-1).to(device)
         true_labels = true_labels.to(device)
         
-#         GPUtil.showUtilization()
+        GPUtil.showUtilization()      # shows if GPU is being used or not
         # src = [walk length, batch size * n_walks, input dim]
 
         optimizer.zero_grad()
